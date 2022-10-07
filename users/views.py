@@ -24,3 +24,8 @@ def send_emploee_birthday():
             
                 print(f'{user.name} {user.last_name} email sent with birthday wish')
 
+                print(user.pk)
+
+                Employess.objects.filter(pk=user.pk).update(last_notification=today, last_birthday_notified=today)
+
+

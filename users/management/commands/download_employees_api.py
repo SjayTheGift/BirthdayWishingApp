@@ -47,6 +47,8 @@ class Command(BaseCommand):
         last_notification = None
         last_birthday_notified = None
 
+        print("Please wait downloading...")
+
         for data in json_data:
             try:
                 email = f"{data['name']}{data['lastname']}@realmdigital.co.za"
@@ -72,3 +74,5 @@ class Command(BaseCommand):
                 )
             except KeyError:
                 pass
+        
+        print("Complete!")
